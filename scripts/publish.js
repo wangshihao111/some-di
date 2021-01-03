@@ -1,7 +1,7 @@
-const { spawnSync } = require('child_process');
+const { spawn } = require('child_process');
 const inquirer = require('inquirer');
 const { readFileSync, writeFileSync } = require('fs');
-const { resolve } = require('path');
+const path = require('path');
 const prettier = require('prettier');
 const chalk = require('chalk');
 
@@ -15,23 +15,29 @@ inquirer
       name: 'version',
     },
   ])
-  .then((res) => {
+  .then(async (res) => {
     const { version } = res;
     if (version) {
-      const pkgPath = resolve(__dirname, '../package.json');
+      const pkgPath = path.resolve(__dirname, '../package.json');
       const content = JSON.parse(readFileSync(pkgPath, 'utf8'));
       content.version = version;
       const writeContent = prettier.format(JSON.stringify(content), { parser: 'json' });
       writeFileSync(pkgPath, writeContent, 'utf8');
-      const queue = [
-        'npm publish',
-        'git add .',
-        `git commit -m "Publish: ${version}"`,
-        'git push',
-      ];
-      queue.forEach((script) => {
-        spawnSync(script, {shell: true, cwd: process.cwd()});
-      });
+      const queue = ['npm publish', 'git add .', `git commit -m "Publish: ${version}"`, 'git push'];
+      for (let index = 0; index < queue.length; index++) {
+        const script = queue[index];
+        await new Promise((resolve, reject) => {
+          const child = spawn(script, { shell: true, cwd: process.cwd() });
+          child.stdout.pipe(process.stdout);
+          child.on('exit', () => {
+            console.log(chalk.green(`执行命令: ${script} 成功.`));
+            resolve();
+          });
+          child.on('error', (e) => {
+            reject(e)
+          });
+        });
+      }
     } else {
       console.log(chalk.red('请输入合法的版本号.'));
       process.exit(1);
