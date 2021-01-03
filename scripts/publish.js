@@ -29,12 +29,18 @@ inquirer
         await new Promise((resolve, reject) => {
           const child = spawn(script, { shell: true, cwd: process.cwd() });
           child.stdout.pipe(process.stdout);
-          child.on('exit', () => {
-            console.log(chalk.green(`执行命令: ${script} 成功.`));
-            resolve();
-          });
+          child.stderr.pipe(process.stderr);
           child.on('error', (e) => {
-            reject(e)
+            reject(e);
+          });
+          child.on('exit', (code) => {
+            if (code !== 0) {
+              reject();
+              console.log(chalk.red(`执行命令: ${script} 失败.`));
+            } else {
+              console.log(chalk.green(`执行命令: ${script} 成功.`));
+              resolve();
+            }
           });
         });
       }
@@ -42,5 +48,4 @@ inquirer
       console.log(chalk.red('请输入合法的版本号.'));
       process.exit(1);
     }
-  })
-  .catch((e) => console.log(e));
+  });
