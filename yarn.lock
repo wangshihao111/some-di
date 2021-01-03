@@ -106,6 +106,11 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+ci-info@^2.0.0:
+  version "2.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
+  integrity sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
+
 clean-stack@^2.0.0:
   version "2.2.0"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -154,6 +159,11 @@ commander@^6.2.0:
   version "6.2.1"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
+
+compare-versions@^3.6.0:
+  version "3.6.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
+  integrity sha1-GlaJkTaF5ah2N7jT/8p1UU7EHWI=
 
 cosmiconfig@^7.0.0:
   version "7.0.0"
@@ -247,6 +257,21 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+find-up@^4.0.0:
+  version "4.1.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/find-up/-/find-up-4.1.0.tgz#97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19"
+  integrity sha1-l6/n1s3AvFkoWEt8jXsW6KmqXRk=
+  dependencies:
+    locate-path "^5.0.0"
+    path-exists "^4.0.0"
+
+find-versions@^3.2.0:
+  version "3.2.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/find-versions/-/find-versions-3.2.0.tgz#10297f98030a786829681690545ef659ed1d254e"
+  integrity sha1-ECl/mAMKeGgpaBaQVF72We0dJU4=
+  dependencies:
+    semver-regex "^2.0.0"
+
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.2"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.2.tgz#b5fde77f22cbe35f390b4e089922c50bce6ef664"
@@ -273,6 +298,22 @@ human-signals@^1.1.1:
   version "1.1.1"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
+
+husky@^4.3.6:
+  version "4.3.6"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/husky/-/husky-4.3.6.tgz#ebd9dd8b9324aa851f1587318db4cccb7665a13c"
+  integrity sha1-69ndi5MkqoUfFYcxjbTMy3ZloTw=
+  dependencies:
+    chalk "^4.0.0"
+    ci-info "^2.0.0"
+    compare-versions "^3.6.0"
+    cosmiconfig "^7.0.0"
+    find-versions "^3.2.0"
+    opencollective-postinstall "^2.0.2"
+    pkg-dir "^4.2.0"
+    please-upgrade-node "^3.2.0"
+    slash "^3.0.0"
+    which-pm-runs "^1.0.0"
 
 import-fresh@^3.2.1:
   version "3.3.0"
@@ -372,6 +413,13 @@ listr2@^3.2.2:
     rxjs "^6.6.3"
     through "^2.3.8"
 
+locate-path@^5.0.0:
+  version "5.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/locate-path/-/locate-path-5.0.0.tgz#1afba396afd676a6d42504d0a67a3a7eb9f62aa0"
+  integrity sha1-Gvujlq/WdqbUJQTQpno6frn2KqA=
+  dependencies:
+    p-locate "^4.1.0"
+
 log-symbols@^4.0.0:
   version "4.0.0"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/log-symbols/-/log-symbols-4.0.0.tgz#69b3cc46d20f448eccdb75ea1fa733d9e821c920"
@@ -438,12 +486,36 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
+opencollective-postinstall@^2.0.2:
+  version "2.0.3"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
+  integrity sha1-eg//l49tv6TQBiOPusmO1BmMMlk=
+
+p-limit@^2.2.0:
+  version "2.3.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/p-limit/-/p-limit-2.3.0.tgz#3dd33c647a214fdfffd835933eb086da0dc21db1"
+  integrity sha1-PdM8ZHohT9//2DWTPrCG2g3CHbE=
+  dependencies:
+    p-try "^2.0.0"
+
+p-locate@^4.1.0:
+  version "4.1.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/p-locate/-/p-locate-4.1.0.tgz#a3428bb7088b3a60292f66919278b7c297ad4f07"
+  integrity sha1-o0KLtwiLOmApL2aRkni3wpetTwc=
+  dependencies:
+    p-limit "^2.2.0"
+
 p-map@^4.0.0:
   version "4.0.0"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/p-map/-/p-map-4.0.0.tgz#bb2f95a5eda2ec168ec9274e06a747c3e2904d2b"
   integrity sha1-uy+Vpe2i7BaOySdOBqdHw+KQTSs=
   dependencies:
     aggregate-error "^3.0.0"
+
+p-try@^2.0.0:
+  version "2.2.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
+  integrity sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -462,6 +534,11 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
+path-exists@^4.0.0:
+  version "4.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/path-exists/-/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
+  integrity sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=
+
 path-key@^3.0.0, path-key@^3.1.0:
   version "3.1.1"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
@@ -476,6 +553,13 @@ picomatch@^2.0.5:
   version "2.2.2"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha1-IfMz6ba46v8CRo9RRupAbTRfTa0=
+
+pkg-dir@^4.2.0:
+  version "4.2.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/pkg-dir/-/pkg-dir-4.2.0.tgz#f099133df7ede422e81d1d8448270eeb3e4261f3"
+  integrity sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=
+  dependencies:
+    find-up "^4.0.0"
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
@@ -522,6 +606,11 @@ semver-compare@^1.0.0:
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
   integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
 
+semver-regex@^2.0.0:
+  version "2.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/semver-regex/-/semver-regex-2.0.0.tgz#a93c2c5844539a770233379107b38c7b4ac9d338"
+  integrity sha1-qTwsWERTmncCMzeRB7OMe0rJ0zg=
+
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
@@ -538,6 +627,11 @@ signal-exit@^3.0.2:
   version "3.0.3"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
+
+slash@^3.0.0:
+  version "3.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
 
 slice-ansi@^3.0.0:
   version "3.0.0"
@@ -632,6 +726,11 @@ typescript@^3.8.3:
   version "3.9.7"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha1-mNYApevcOPQMsndSLxLcgA6eJfo=
+
+which-pm-runs@^1.0.0:
+  version "1.0.0"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/which-pm-runs/-/which-pm-runs-1.0.0.tgz#670b3afbc552e0b55df6b7780ca74615f23ad1cb"
+  integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
 
 which@^2.0.1:
   version "2.0.2"

@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node src/tests/index.ts",
     "build": "tsc",
     "prepublish": "yarn build",
-    "precommit": "lint-staged"
+    "lint-staged": "lint-staged"
   },
   "keywords": [
     "IOC",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/wangshihao111/some-di.git",
   "devDependencies": {
     "@types/node": "^13.13.5",
+    "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "typescript": "^3.8.3"
@@ -33,6 +34,13 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "post-merge": "git submodule update",
+      "post-checkout": "git submodule update"
+    }
   },
   "files": [
     "lib",
