@@ -1,6 +1,6 @@
 {
   "name": "some-di",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "王世豪<913003120@qq.com>",
@@ -11,13 +11,8 @@
     "lint-staged": "lint-staged",
     "publish": "node ./scripts/publish.js"
   },
-  "keywords": [
-    "IOC",
-    "DI"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "keywords": ["IOC", "DI"],
+  "publishConfig": { "registry": "https://registry.npmjs.org" },
   "repository": {
     "type": "git",
     "url": "https://github.com/wangshihao111/some-di.git"
@@ -33,11 +28,7 @@
     "prettier": "^2.2.1",
     "typescript": "^3.8.3"
   },
-  "lint-staged": {
-    "src/**/*.{ts,tsx,json}": [
-      "prettier --write"
-    ]
-  },
+  "lint-staged": { "src/**/*.{ts,tsx,json}": ["prettier --write"] },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-staged",
@@ -45,8 +36,5 @@
       "post-checkout": "git submodule update"
     }
   },
-  "files": [
-    "lib",
-    "README.md"
-  ]
+  "files": ["lib", "README.md"]
 }
