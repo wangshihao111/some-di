@@ -23,7 +23,14 @@ inquirer
       content.version = version;
       const writeContent = prettier.format(JSON.stringify(content), { parser: 'json' });
       writeFileSync(pkgPath, writeContent, 'utf8');
-      const queue = ['npm publish', 'git add .', `git commit -m "Publish: ${version}"`, 'git push'];
+      const queue = [
+        'npm publish',
+        'git add .',
+        `git commit -m "Publish: ${version}"`,
+        'git push',
+        `git tag v${version}`,
+        'git push --tags',
+      ];
       for (let index = 0; index < queue.length; index++) {
         const script = queue[index];
         await new Promise((resolve, reject) => {
