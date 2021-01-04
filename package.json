@@ -1,6 +1,6 @@
 {
   "name": "some-di",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "王世豪<913003120@qq.com>",
