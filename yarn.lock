@@ -23,6 +23,13 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@types/commander@^2.12.2":
+  version "2.12.2"
+  resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/@types/commander/-/commander-2.12.2.tgz#183041a23842d4281478fa5d23c5ca78e6fd08ae"
+  integrity sha1-GDBBojhC1CgUePpdI8XKeOb9CK4=
+  dependencies:
+    commander "*"
+
 "@types/node@^13.13.5":
   version "13.13.38"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/@types/node/-/node-13.13.38.tgz#66a7c068305dbd64cf167d0f6b6b6be71dd453e1"
@@ -170,7 +177,7 @@ color-name@~1.1.4:
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
 
-commander@^6.2.0:
+commander@*, commander@^6.2.0, commander@^6.2.1:
   version "6.2.1"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
