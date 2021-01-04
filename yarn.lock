@@ -101,6 +101,11 @@ callsites@^3.0.0:
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
   integrity sha1-s2MKvYlDQy9Us/BRkjjjPNffL3M=
 
+chakl@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.npmjs.org/chakl/-/chakl-0.0.1-security.tgz#2ded68211881b6cc08f638ffb99c706d9d8ec1bd"
+  integrity sha512-ubU9mXGsljYfFSX9LVWr55ifAu4c2n7NqE9tFOfRb7H/uu56qViepgcHmi/qM6FguhyXjk/ZEMRJWLcAdRKH8g==
+
 chalk@^2.0.0:
   version "2.4.2"
   resolved "http://nexus.saas.hand-china.com/repository/hzero-npm-group/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -273,6 +278,16 @@ external-editor@^3.0.3:
     chardet "^0.7.0"
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
+
+fast-publish@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/fast-publish/-/fast-publish-0.0.2.tgz#007e18cf6d85c2dadbde26e0346e11ba6379fe83"
+  integrity sha512-3p0rqf0uxsrQnbYDrfMp/iW2pVUdGT1mTJQ6kEP1BlEv2JTbcBQlpl0KFwqtC2fFiob6jpaNm5BQwZiX0bQftw==
+  dependencies:
+    chakl "^0.0.1-security"
+    commander "^6.2.1"
+    inquirer "^7.3.3"
+    prettier "^2.2.1"
 
 figures@^3.0.0, figures@^3.2.0:
   version "3.2.0"
