@@ -7,9 +7,9 @@
 example:
 
 ```ts
-import { createPool, BaseProvider } from '../index';
+import { createPool, BaseProvider } from 'some-di';
 
-class ProOne extends BaseProvider<any> {
+class ProviderOne extends BaseProvider<any> {
   constructor() {
     super();
     this.setState({ a: 1 });
@@ -17,10 +17,10 @@ class ProOne extends BaseProvider<any> {
 }
 
 const { inject } = createPool({
-  providers: [ProOne],
+  providers: [ProviderOne],
 });
 
-const pro1 = inject<ProOne>(ProOne);
+const pro1 = inject<ProviderOne>(ProviderOne);
 console.log(pro1, pro1.state);
 ```
 
@@ -44,19 +44,7 @@ export interface ClassProvider {
   useClass: typeof BaeProvider;
 }
 
-// 也可以直接传递一个类到provider数组，但该类需要继承BaseProvider，例如
 
-// import { BaseProvider, createRootContainer } from 'what-di';
-class UserService extends BaseProvider {
-  // ...
-}
-
-createRootContainer({
-  providers: [
-    UserService, // 直接使用类，注入时可以 inject('UserService') 或 inject(UserService)
-  ],
-  modules: [],
-});
 ```
 
 ## 如何订阅状态 provider 实例状态？
