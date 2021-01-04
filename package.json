@@ -9,7 +9,7 @@
     "build": "tsc",
     "prepublish": "yarn build",
     "lint-staged": "lint-staged",
-    "publish": "node ./scripts/publish.js"
+    "pub": "node ./scripts/publish.js"
   },
   "keywords": ["IOC", "DI"],
   "publishConfig": { "registry": "https://registry.npmjs.org" },
