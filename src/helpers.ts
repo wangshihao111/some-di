@@ -19,7 +19,7 @@ export function createPool(
   const container = new Container({ ...props });
   function Inject(name) {
     return function (target, propName) {
-      Reflect.defineProperty(target, propName, {
+      Object.defineProperty(target, propName, {
         get() {
           if (!this.value) {
             this.value = inject(name);
