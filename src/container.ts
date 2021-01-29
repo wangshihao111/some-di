@@ -18,24 +18,20 @@ export type FactoryProvider = {
 
 export type NormalProvider = ValueProvider | FactoryProvider | ClassProvider;
 
-export type Provider = ValueProvider | FactoryProvider | ClassProvider | typeof BaseProvider;
+export type Provider = ValueProvider | FactoryProvider | ClassProvider | (new (...args) => any);
 
 export interface ContainerProps {
   providers: Provider[];
 }
 
 export class Container {
-  private parent: Container; // 父级模块
   private providers: Map<string, NormalProvider>;
-  private modules: Map<string, Container>;
   private instanceMap: Map<string, any>;
-  private _namespace: string;
   public depsMap: Map<string, any>;
 
   constructor({ providers = [] }: ContainerProps) {
     this.instanceMap = new Map();
     // this._namespace = namespace;
-    this.modules = new Map();
     this.depsMap = new Map();
     this.providers = new Map();
     this.registerProviders(providers);
@@ -47,7 +43,7 @@ export class Container {
     if (!instance) {
       const def = this.providers.get(_name);
       if (!def) {
-        instance = this.parent?.getInstance(_name);
+        throw new Error(`can not find any provider of ${_name}`);
       } else {
         if ((<ClassProvider>def).useClass) {
           const Construct = (<ClassProvider>def).useClass;
@@ -76,7 +72,7 @@ export class Container {
           (<ClassProvider>provider).useClass
         )
       ) {
-        if (!(<any>provider).__is_base_provider__) {
+        if (typeof (<any>provider) !== 'function') {
           throw new Error('提供的provider不是一个合法的Provider。');
         }
         _provider = {
@@ -99,32 +95,5 @@ export class Container {
 
   public getInstanceMap(): Map<string, any> {
     return this.instanceMap;
-  }
-
-  public setParent(ctx: Container): void {
-    if (!(ctx instanceof Container)) {
-      throw new Error('模块关联出错，请检查模块的创建方式');
-    }
-    this.parent = ctx;
-  }
-
-  public getParent(): Container {
-    return this.parent;
-  }
-  public get namespace(): string {
-    return this._namespace;
-  }
-
-  public getModule(namespace: string): Container {
-    return this.modules.get(namespace);
-  }
-
-  public registerModule(container: Container, namespace: string) {
-    const exist = this.providers.get(namespace);
-    if (exist) {
-      log('注册Module失败，因为该namespace已经存在。');
-    } else {
-      this.modules.set(namespace, container);
-    }
   }
 }

@@ -2,7 +2,7 @@ export interface DIObserver<S> {
   (state: S): void;
 }
 
-export class BaseProvider<T = any> {
+export class BaseProvider<T> {
   public static readonly __is_base_provider__ = true;
 
   constructor() {

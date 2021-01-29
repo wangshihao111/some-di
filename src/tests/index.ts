@@ -1,6 +1,6 @@
 import { createPool, BaseProvider } from '../index';
 
-class ProOne extends BaseProvider<any> {
+class ProOne extends BaseProvider<{}> {
   constructor() {
     super();
     this.setState({ a: 1 });
